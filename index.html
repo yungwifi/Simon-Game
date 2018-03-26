@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <!-- jQuery CDN tag -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </head>
 
@@ -20,21 +23,16 @@
     <p class="center-align"> Simon creates a series of tones and lights and requires a user to repeat the sequence. If the user succeeds, the series
         becomes progressively longer and more complex. Once the user fails, the game is over. How far can you go?
     </p>
-    <button class="waves-effect waves-light btn-large" id="start">Start Game</button>
-
-    <div class="round" id="gameround"> Round: </div>
-    <div class="row">
-        <div class="col s6 m6 l3">
-            <div id="red"></div>
-        </div>
-        <div class="col s6 m6 l3">
-            <div id="blue"></div>
-        </div>
-        <div class="col s6 m6 l3">
-            <div id="yellow"></div>
-        </div>
-        <div class="col s6 m6 l3">
-            <div id="green"></div>
+    <div class="start center-align">
+        <button href="#gameboard" class="waves-effect waves-light btn-large" id="start">Start Game</button>
+    </div>
+    <div id="gameboard">
+        <div class="round" id="gameround"> Round: </div>
+        <div class="row">
+            <div class="col s6 m6 l3 piece" id="red"> </div>
+            <div class="col s6 m6 l3 piece" id="blue"></div>
+            <div class="col s6 m6 l3 piece" id="yellow"></div>
+            <div class="col s6 m6 l3 piece" id="green"></div>
         </div>
     </div>
 </body>

@@ -1,27 +1,33 @@
 #red{
-    height: 200px;
-    width: 200px;
     background-color: red;
 }
 
 #blue{
-    height: 200px;
-    width: 200px;
     background-color: blue;
 }
 
 #yellow{
-    height: 200px;
-    width: 200px;
     background-color: yellow;
 }
 
 #green{
-    height: 200px;
-    width: 200px;
     background-color: green;
 }
 
 .row{
     margin-top: 60px;
+}
+
+.start{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.round{
+    font-size: 20px;
+}
+
+.piece {
+    height: 200px;
+    width: 200px;
 }
