@@ -10,6 +10,8 @@ const squareSelector = function () {
 }
 
 
+
+
 //user clicks square 
 userClick = $('.piece').click(() => {
     console.log('user clicked')
@@ -38,7 +40,30 @@ displaySquare = function () {
         $('#blue').css("background-color", "black")
     } else if (randomSquare === 'green') {
         $('#green').css("background-color", "black")
+    } else {
     }
+}
+// next round logic 
+nextRound = function () {
+    if (userClick === randomSquare) {
+        squareSelector()
+        displaySquare()
+        gameMemory.push(randomSquare)
+        console.log(randomSquare)
+    } else {
+        //game over function
+    }
+}
+
+//pass or fail logic 
+passFail = function () {
+    for (var i = 0; i < gameMemory.length; i++) {
+        if (userClicksRed === randomSquare) {
+
+        }
+
+    }
+
 }
 
 //user clicks start and game begins 
