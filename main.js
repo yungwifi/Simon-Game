@@ -1,34 +1,13 @@
-//Square options and game memory arrays
-
+//Square options, game memory array, and user click history
 const squareOptions = ['red', 'blue', 'yellow', 'green']
 const gameMemory = []
 let randomSquare;
+let userClick;
 //random square generator 
 const squareSelector = function () {
     randomSquare = squareOptions[Math.floor(Math.random() * squareOptions.length)]
 
 }
-
-
-
-
-//user clicks square 
-userClick = $('.piece').click(() => {
-    console.log('user clicked')
-})
-userClicksRed = $('#red').click(() => {
-    $('#red').css("background-color", "black")
-})
-userClicksYellow = $('#yellow').click(() => {
-    $('#yellow').css("background-color", "black")
-})
-userClicksGreen = $('#green').click(() => {
-    $('#green').css("background-color", "black")
-})
-userClicksBlue = $('#blue').click(() => {
-    $('#blue').css("background-color", "black")
-})
-
 
 //AI displays randomly selected sqaure 
 displaySquare = function () {
@@ -45,24 +24,19 @@ displaySquare = function () {
 }
 // next round logic 
 nextRound = function () {
-    if (userClick === randomSquare) {
+    if (randomSquare === userClick) {
         squareSelector()
         displaySquare()
         gameMemory.push(randomSquare)
         console.log(randomSquare)
     } else {
-        //game over function
+        alert('Game Over')
     }
 }
 
-//pass or fail logic 
-passFail = function () {
-    for (var i = 0; i < gameMemory.length; i++) {
-        if (userClicksRed === randomSquare) {
+// game win logic 
 
-        }
-
-    }
+gameWin = function () {
 
 }
 
@@ -74,13 +48,33 @@ $('#start').click(() => {
     console.log(randomSquare)
 })
 
+$('#red').click(() => {
+    userClick = 'red'
+    console.log('red click')
+    nextRound()
+})
+
+$('#yellow').click(() => {
+    userClick = 'yellow'
+    console.log('yellow click')
+    nextRound()
+})
+$('#green').click(() => {
+    userClick = 'green'
+    console.log('green click')
+    nextRound()
+})
+$('#blue').click(() => {
+    userClick = 'blue'
+    console.log('blue click')
+    nextRound()
+})
+
 $('#start').one('click', function () {
     $(this).attr('disabled', 'disabled');
-});
+})
 
 
-
-//how do I limit these clicks to only one event per session? 
 
 $(document).ready()
 console.log('Start Game')
