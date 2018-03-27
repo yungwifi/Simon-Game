@@ -1,0 +1,17 @@
+const squareSelection = function () {
+    if (userClick = $('#red').click()) {
+        $('#red').css("background-color", "black")
+    }
+}
+
+const userClicked = function () {
+    if ($('#red'.click())) {
+        $('#red').css("background-color", "black")
+    } else if ($('#yellow'.click())) {
+        $('#yellow').css("background-color", "black")
+    } else if ($('#blue'.click())) {
+        $('#blue').css("background-color", "black")
+    } else if ($('#green'.click())) {
+        $('#red').css("background-color", "black")
+    }
+}
