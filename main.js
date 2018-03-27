@@ -16,7 +16,6 @@ userClick = $('.piece').click(() => {
 })
 userClicksRed = $('#red').click(() => {
     $('#red').css("background-color", "black")
-    setTimeout($.proxy(userClicksRed, 'jQuery'), 1000)
 })
 userClicksYellow = $('#yellow').click(() => {
     $('#yellow').css("background-color", "black")
@@ -31,29 +30,32 @@ userClicksBlue = $('#blue').click(() => {
 
 //AI displays randomly selected sqaure 
 displaySquare = function () {
-    if (randomSquare == '') {
-        userClicksRed()
-    } else if (randomSquare == 'yellow') {
-        return userClicksYellow
-    } else if (randomSquare == 'blue') {
-        return userClicksBlue
-    } else if (randomSquare == 'green') {
-        return userClicksGreen
+    if (randomSquare === 'red') {
+        $('#red').css("background-color", "black")
+    } else if (randomSquare === 'yellow') {
+        $('#yellow').css("background-color", "black")
+    } else if (randomSquare === 'blue') {
+        $('#blue').css("background-color", "black")
+    } else if (randomSquare === 'green') {
+        $('#green').css("background-color", "black")
     }
 }
 
 //user clicks start and game begins 
 $('#start').click(() => {
     squareSelector()
+    displaySquare()
     gameMemory.push(randomSquare)
     console.log(randomSquare)
 })
 
-displaySquare();
+$('#start').one('click', function () {
+    $(this).attr('disabled', 'disabled');
+});
+
 
 
 //how do I limit these clicks to only one event per session? 
-//why is my gameMemory push different from my randomsquare generator in console
 
 $(document).ready()
 console.log('Start Game')
