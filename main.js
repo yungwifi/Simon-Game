@@ -35,9 +35,9 @@ nextRound = function () {
 }
 
 // game win logic 
-
 gameWin = function () {
-
+    if (gameMemory.length > 5)
+        alert('You won the game!')
 }
 
 //user clicks start and game begins 
@@ -47,33 +47,38 @@ $('#start').click(() => {
     gameMemory.push(randomSquare)
     console.log(randomSquare)
 })
-
+//user clicks red
 $('#red').click(() => {
     userClick = 'red'
     console.log('red click')
     nextRound()
+    gameWin()
 })
-
+//user clicks yellow
 $('#yellow').click(() => {
     userClick = 'yellow'
     console.log('yellow click')
     nextRound()
+    gameWin()
 })
+//user clicks green
 $('#green').click(() => {
     userClick = 'green'
     console.log('green click')
     nextRound()
+    gameWin()
 })
+//user clicks blue 
 $('#blue').click(() => {
     userClick = 'blue'
     console.log('blue click')
     nextRound()
+    gameWin()
 })
-
+//prevents user from clicking start game multiple times
 $('#start').one('click', function () {
     $(this).attr('disabled', 'disabled');
 })
-
 
 
 $(document).ready()
