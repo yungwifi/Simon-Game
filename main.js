@@ -12,16 +12,20 @@ const squareSelector = function () {
 //AI displays randomly selected sqaure 
 displaySquare = function () {
     for (var i = 0; i < gameMemory.length; i++) {
-        if (gameMemory[] === 'red') {
+        if (gameMemory[i] === 'red') {
+            console.log(gameMemory)
             $('#red').css("background-color", "black")
             setTimeout(returnSquare, 500)
-        } else if (gameMemory[] === 'yellow') {
+        } else if (gameMemory[i] === 'yellow') {
+            console.log(gameMemory)
             $('#yellow').css("background-color", "black")
             setTimeout(returnSquare, 500)
-        } else if (gameMemory[] === 'blue') {
+        } else if (gameMemory[i] === 'blue') {
+            console.log(gameMemory)
             $('#blue').css("background-color", "black")
             setTimeout(returnSquare, 500)
-        } else if (gameMemory[] === 'green') {
+        } else if (gameMemory[i] === 'green') {
+            console.log(gameMemory)
             $('#green').css("background-color", "black")
             setTimeout(returnSquare, 500)
         } else {
@@ -43,7 +47,7 @@ returnSquare = function () {
 }
 // next round logic 
 nextRound = function () {
-    if (randomSquare === userClick) {
+    if (randomSquare === userClick) { //this function needs to include game memory contents 
         squareSelector() //first
         gameMemory.push(randomSquare)  //second
         displaySquare() // display SQUARESSSSS
