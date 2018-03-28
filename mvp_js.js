@@ -1,4 +1,3 @@
-
 //Square options, game memory array, and user click history
 const squareOptions = ['red', 'blue', 'yellow', 'green']
 const gameMemory = []
@@ -8,46 +7,31 @@ let userClick;
 //random square generator 
 const squareSelector = function () {
     randomSquare = squareOptions[Math.floor(Math.random() * squareOptions.length)]
-
 }
 //AI displays randomly selected sqaure 
 displaySquare = function () {
     for (var i = 0; i < gameMemory.length; i++) {
         if (gameMemory[i] === 'red') {
-            console.log(returnSquare)
-            $('#red').css("background-color", "black")
-            setTimeout(returnSquare, 500)
-
+            console.log(gameMemory)
+            $('#gameround').html(gameMemory)
         } else if (gameMemory[i] === 'yellow') {
             console.log(gameMemory)
-            $('#yellow').css("background-color", "black")
-            setTimeout(returnSquare, 500)
-
+            $('#gameround').html(gameMemory)
         } else if (gameMemory[i] === 'blue') {
             console.log(gameMemory)
-            $('#blue').css("background-color", "black")
-            setTimeout(returnSquare, 500)
-
+            $('#gameround').html(gameMemory)
         } else if (gameMemory[i] === 'green') {
             console.log(gameMemory)
-            $('#green').css("background-color", "black")
-            setTimeout(returnSquare, 500)
-
+            $('#gameround').html(gameMemory)
         } else {
         }
+        setTimeout(returnState, 500)
     }
 }
 //return square's original state 
-returnSquare = function () {
-    if (randomSquare === 'red') {
-        $('#red').css("background-color", "red")
-    } else if (randomSquare === 'yellow') {
-        $('#yellow').css("background-color", "yellow")
-    } else if (randomSquare === 'blue') {
-        $('#blue').css("background-color", "blue")
-    } else if (randomSquare === 'green') {
-        $('#green').css("background-color", "green")
-    } else {
+returnState = function () {
+    if (displaySquare == true) {
+        $('#gameround').remove()
     }
 }
 // next round logic 
