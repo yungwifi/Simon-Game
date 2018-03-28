@@ -1,6 +1,8 @@
 //Square options, game memory array, and user click history
 const squareOptions = ['red', 'blue', 'yellow', 'green']
 const gameMemory = []
+const round = gameMemory.length
+const userInput = []
 let randomSquare;
 let userClick;
 //random square generator 
@@ -8,7 +10,16 @@ const squareSelector = function () {
     randomSquare = squareOptions[Math.floor(Math.random() * squareOptions.length)]
 
 }
-
+//AI display randomly selected square sequence 
+displayMemory = function () {
+    for (var i = 0; i < gameMemory.length; i++) {
+        if (userInput === gameMemory) {
+            squareSelector()
+            gameMemory.push(randomSquare)
+            console.log(gameMemory)
+        }
+    }
+}
 //AI displays randomly selected sqaure 
 displaySquare = function () {
     if (randomSquare === 'red') {
@@ -26,7 +37,7 @@ displaySquare = function () {
 nextRound = function () {
     if (randomSquare === userClick) {
         squareSelector()
-        displaySquare()
+        displayMemory()
         gameMemory.push(randomSquare)
         console.log(randomSquare)
     } else {
@@ -36,7 +47,7 @@ nextRound = function () {
 
 // game win logic 
 gameWin = function () {
-    if (gameMemory.length > 5)
+    if (userInput > 5)
         alert('You won the game!')
 }
 
@@ -53,6 +64,7 @@ $('#red').click(() => {
     console.log('red click')
     nextRound()
     gameWin()
+    userInput.push(userClick)
 })
 //user clicks yellow
 $('#yellow').click(() => {
@@ -60,6 +72,7 @@ $('#yellow').click(() => {
     console.log('yellow click')
     nextRound()
     gameWin()
+    userInput.push(userClick)
 })
 //user clicks green
 $('#green').click(() => {
@@ -67,6 +80,7 @@ $('#green').click(() => {
     console.log('green click')
     nextRound()
     gameWin()
+    userInput.push(userClick)
 })
 //user clicks blue 
 $('#blue').click(() => {
@@ -74,7 +88,9 @@ $('#blue').click(() => {
     console.log('blue click')
     nextRound()
     gameWin()
+    userInput.push(userClick)
 })
+
 //prevents user from clicking start game multiple times
 $('#start').one('click', function () {
     $(this).attr('disabled', 'disabled');
