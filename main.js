@@ -5,12 +5,19 @@ const gameMemory = []
 const userInput = []
 let randomSquare;
 let userClick;
+let round = gameMemory.length
 
 //random square generator 
 const squareSelector = function () {
     randomSquare = squareOptions[Math.floor(Math.random() * squareOptions.length)]
 
 }
+
+// display round 
+roundDisplay = function () {
+    $('.round').textContent('Round: ' + round)
+}
+
 //AI displays randomly selected sqaure 
 changeSquareBlack = function () {
     for (var i = 0; i < gameMemory.length; i++) {
@@ -53,6 +60,7 @@ returnSquare = function () {
 nextRound = function () {
     if (randomSquare === userClick) { //this function needs to include game memory contents 
         gameWin()
+        roundDisplay()
     }
     else {
         alert('Game Over') // could we wrtie a else if statement here that says 
