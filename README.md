@@ -20,6 +20,9 @@ THE biggest problem I ran into during this project as having to learn Asycnchron
 http://mystifying-pike-735652.bitballoon.com/
 https://trello.com/b/KzQnp7Rh/project-1-user-story
 
+#Lessons Learned 
+
+
 # Resources 
 Jquery API Documentation 
 W3Schools 
