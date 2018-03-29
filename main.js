@@ -12,19 +12,19 @@ const squareSelector = function () {
 
 }
 //AI displays randomly selected sqaure 
-displaySquare = function () {
+changeSquareBlack = function () {
     for (var i = 0; i < gameMemory.length; i++) {
-        if (gameMemory[i] === 'red') {
-            console.log(returnSquare)
+        if (gameMemory[gameMemory.length - 1] === 'red') {
+            console.log('Change square value red: ', gameMemory[i])
             $('#red').css("background-color", "black")
-        } else if (gameMemory[i] === 'yellow') {
-            console.log(gameMemory)
+        } else if (gameMemory[gameMemory.length - 1] === 'yellow') {
+            console.log('Change square value yellow: ', gameMemory[i])
             $('#yellow').css("background-color", "black")
-        } else if (gameMemory[i] === 'blue') {
-            console.log(gameMemory)
+        } else if (gameMemory[gameMemory.length - 1] === 'blue') {
+            console.log('Change square value blue: ', gameMemory[i])
             $('#blue').css("background-color", "black")
-        } else if (gameMemory[i] === 'green') {
-            console.log(gameMemory)
+        } else if (gameMemory[gameMemory.length - 1] === 'green') {
+            console.log('Change square value green: ', gameMemory[i])
             $('#green').css("background-color", "black")
         } else {
         }
@@ -34,12 +34,16 @@ displaySquare = function () {
 //return square's original state 
 returnSquare = function () {
     if (randomSquare === 'red') {
+        console.log('return red')
         $('#red').css("background-color", "red")
     } else if (randomSquare === 'yellow') {
+        console.log('return yellow')
         $('#yellow').css("background-color", "yellow")
     } else if (randomSquare === 'blue') {
+        console.log('return blue')
         $('#blue').css("background-color", "blue")
     } else if (randomSquare === 'green') {
+        console.log('return green')
         $('#green').css("background-color", "green")
     } else {
     }
@@ -48,64 +52,64 @@ returnSquare = function () {
 // next round logic 
 nextRound = function () {
     if (randomSquare === userClick) { //this function needs to include game memory contents 
-        squareSelector() //first
-        displaySquare()
-        gameMemory.push(randomSquare)  //second
-        console.log(randomSquare)
-    } else {
-        alert('Game Over')
+        gameWin()
+    }
+    else {
+        alert('Game Over') // could we wrtie a else if statement here that says 
     }
 }
 
 // game win logic 
 gameWin = function () {
-    if (gameMemory.length > 4)
+    if (gameMemory.length < 4) {
+        setTimeout(orchestrator, 500)
+    } else {
         alert('You won the game!')
+    }
 }
 orchestrator = function () {
-    nextRound()
-    returnSquare()
+    squareSelector()
+    gameMemory.push(randomSquare)
+    changeSquareBlack()
+    setTimeout(returnSquare, 500)
+}
+
+startTimeOutFunction = function () {
+    changeSquareBlack()
+    setTimeout(returnSquare, 500)
 }
 
 //user clicks start and game begins 
 $('#start').click(() => {
     squareSelector()
+    console.log('Random square: ', randomSquare)
     gameMemory.push(randomSquare)
-    displaySquare()
-    console.log(randomSquare)
+    setTimeout(startTimeOutFunction, 500)
 })
 
 //user clicks red
 $('#red').click(() => {
     userClick = 'red'
-    console.log('red click')
-    userInput.push(userClick)
-    gameWin()
-    setTimeout(orchestrator, 500)
+    nextRound()
+
 })
 //user clicks yellow
 $('#yellow').click(() => {
     userClick = 'yellow'
-    console.log('yellow click')
-    userInput.push(userClick)
-    setTimeout(orchestrator, 500)
-    gameWin()
+    nextRound()
+
 })
 //user clicks green
 $('#green').click(() => {
     userClick = 'green'
-    console.log('green click')
-    userInput.push(userClick)
-    setTimeout(orchestrator, 500)
-    gameWin()
+    nextRound()
+
 })
 //user clicks blue 
 $('#blue').click(() => {
     userClick = 'blue'
-    console.log('blue click')
-    userInput.push(userClick)
-    setTimeout(orchestrator, 500)
-    gameWin()
+    nextRound()
+
 })
 
 //prevents user from clicking start game multiple times
@@ -115,3 +119,5 @@ $('#start').one('click', function () {
 
 $(document).ready()
 console.log('Start Game')
+
+
