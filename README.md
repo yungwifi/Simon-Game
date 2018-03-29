@@ -31,5 +31,8 @@ Stackover Flow
 CodePen 
 repl.it 
 
+# Phase 2 
+Phase 2 I would like to be able to create the sequence to be played back for each round and the user have to follow the sequence in order to move forward in rounds. I would also like to include a visible and actual timer that forces the user give the answer in the amount of time displayed and if they fail to do so, the game will end and reset.. And finally I would like to add a cheat code, a visible round indentifier,and high score box. 
+
 
 
