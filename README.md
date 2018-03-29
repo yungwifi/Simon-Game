@@ -17,8 +17,9 @@ THE biggest problem I ran into during this project as having to learn Asycnchron
 
 # Links 
 
-http://mystifying-pike-735652.bitballoon.com/
-https://trello.com/b/KzQnp7Rh/project-1-user-story
+http://mystifying-pike-735652.bitballoon.com/ - App on BitBalloon
+https://trello.com/b/KzQnp7Rh/project-1-user-story - User Stories 
+https://www.figma.com/file/YH71VRSIvAI3h9B31UhDEl2l/Simon-Says-Wireframe - Wireframes 
 
 # Lessons Learned 
 BEGIN WITH THE END IN MIND. I start out this project trying to solve a piece of everything and then just putting it together in the end. That was cool because I was able to write a lot of functions but once it came time to put all the pieces together I was lost and ended up breaking my code. I learned how important it is to plan at the begining and how important it is to stick to that plan, no matter how simple the task at hand is. 
