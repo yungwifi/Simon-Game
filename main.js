@@ -18,16 +18,16 @@ changeSquareBlack = function () {
     for (var i = 0; i < gameMemory.length; i++) {
         if (gameMemory[gameMemory.length - 1] === 'red') {
             console.log('Change square value red: ', gameMemory[i])
-            $('#red').css("background-color", "black")
+            $('#red').css("background-color", "#FF6470")
         } else if (gameMemory[gameMemory.length - 1] === 'yellow') {
             console.log('Change square value yellow: ', gameMemory[i])
-            $('#yellow').css("background-color", "black")
+            $('#yellow').css("background-color", "#FFF090")
         } else if (gameMemory[gameMemory.length - 1] === 'blue') {
             console.log('Change square value blue: ', gameMemory[i])
-            $('#blue').css("background-color", "black")
+            $('#blue').css("background-color", "#5C5EFF")
         } else if (gameMemory[gameMemory.length - 1] === 'green') {
             console.log('Change square value green: ', gameMemory[i])
-            $('#green').css("background-color", "black")
+            $('#green').css("background-color", "#5DE859")
         } else {
         }
     }

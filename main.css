@@ -4,10 +4,12 @@
 
 #blue{
     background-color: blue;
+    
 }
 
 #yellow{
     background-color: yellow;
+    
 }
 
 #green{
@@ -16,6 +18,9 @@
 
 .row{
     margin-top: 60px;
+    background-color: #444545;
+    padding: 30px;
+    border-radius: 25px;
 }
 
 .start{
@@ -30,4 +35,9 @@
 .piece {
     height: 200px;
     width: 200px;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: #444545;
+    border-width: 15px;
+
 }
