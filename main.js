@@ -58,7 +58,7 @@ nextRound = function () {
 
     }
     else {
-        alert('Game Over') // could we wrtie a else if statement here that says 
+        alert('Game Over')
     }
 }
 
@@ -90,27 +90,10 @@ $('#start').click(() => {
     setTimeout(startTimeOutFunction, 500)
 })
 
-//user clicks red
-$('#red').click(() => {
-    userClick = 'red'
-    nextRound()
-
-})
-//user clicks yellow
-$('#yellow').click(() => {
-    userClick = 'yellow'
-    nextRound()
-
-})
-//user clicks green
-$('#green').click(() => {
-    userClick = 'green'
-    nextRound()
-
-})
-//user clicks blue 
-$('#blue').click(() => {
-    userClick = 'blue'
+//user clicks square
+$('.piece').click(() => {
+    console.log("Event Target on color:", event.target.id)
+    userClick = event.target.id
     nextRound()
 
 })
